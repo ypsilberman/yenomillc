@@ -3,84 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YenoMI LLC</title>
+  <title>YENOMI LLC</title>
   <meta
     name="description"
-    content="YenoMI LLC invests in and advises legal industry and legal technology companies."
+    content="YENOMI LLC invests in and advises legal industry and legal technology companies."
   />
   <style>
     :root {
-      --bg: #f7f6f2;
-      --surface: #ffffff;
+      --bg: #f5f3ee;
+      --surface: rgba(255,255,255,0.72);
       --text: #111111;
-      --muted: #5f5f5f;
-      --line: #dedbd2;
-      --accent: #1b2430;
-      --max: 1120px;
+      --muted: #606060;
+      --line: #ddd7cc;
+      --accent: #173861;
+      --accent-2: #8f8f8f;
+      --max: 1140px;
+      --shadow: 0 18px 48px rgba(17, 17, 17, 0.06);
+      --radius: 28px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top left, rgba(23,56,97,0.04), transparent 26%),
+        linear-gradient(to bottom, #f8f7f3 0%, #f3f1eb 100%);
       color: var(--text);
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .wrap {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 28px;
+      padding: 0 30px;
     }
 
     header {
       position: sticky;
       top: 0;
-      background: rgba(247, 246, 242, 0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(222, 219, 210, 0.8);
-      z-index: 10;
+      background: rgba(245,243,238,0.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(221,215,204,0.75);
+      z-index: 20;
     }
 
     .nav {
-      height: 78px;
+      min-height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 24px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 14px;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #1b2430, #3a4a5d);
-      display: inline-block;
-      flex: 0 0 auto;
+    .brand img {
+      height: 46px;
+      width: auto;
+      display: block;
+      border-radius: 6px;
     }
 
     .nav-links {
@@ -90,211 +85,209 @@
       font-size: 14px;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
+    .nav-links a:hover { color: var(--text); }
 
     .hero {
-      padding: 96px 0 72px;
+      padding: 92px 0 70px;
     }
 
     .eyebrow {
       color: var(--muted);
-      font-size: 13px;
-      letter-spacing: 0.12em;
+      font-size: 12px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(42px, 7vw, 82px);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-      font-weight: 600;
-      max-width: 900px;
       margin: 0;
+      max-width: 980px;
+      font-size: clamp(44px, 7vw, 88px);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
+      font-weight: 650;
     }
 
     .hero-copy {
       margin-top: 28px;
-      max-width: 720px;
-      font-size: 20px;
+      max-width: 760px;
+      font-size: 22px;
       color: var(--muted);
     }
 
     .hero-actions {
       margin-top: 34px;
       display: flex;
-      flex-wrap: wrap;
       gap: 14px;
+      flex-wrap: wrap;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 18px;
+      padding: 14px 20px;
       border-radius: 999px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 650;
       border: 1px solid var(--accent);
-      transition: 0.2s ease;
+      transition: transform 0.18s ease, opacity 0.18s ease;
     }
 
     .button.primary {
       background: var(--accent);
-      color: #fff;
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(23,56,97,0.14);
     }
 
     .button:hover {
       transform: translateY(-1px);
-      opacity: 0.95;
-    }
-
-    .hero-panel {
-      margin-top: 56px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 28px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .hero-panel div {
-      min-width: 0;
-    }
-
-    .hero-panel .label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .hero-panel .value {
-      font-size: 18px;
-      line-height: 1.35;
+      opacity: 0.96;
     }
 
     section {
-      padding: 34px 0 18px;
+      padding: 22px 0;
     }
 
     .section-head {
       display: grid;
       grid-template-columns: 220px 1fr;
-      gap: 30px;
-      padding: 34px 0;
+      gap: 32px;
       border-top: 1px solid var(--line);
+      padding: 34px 0;
     }
 
     .section-title {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      font-size: 12px;
       color: var(--muted);
-      padding-top: 5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding-top: 8px;
     }
 
     .section-body {
-      max-width: 760px;
+      min-width: 0;
     }
 
-    .section-body p {
-      margin: 0 0 18px;
+    .section-intro {
+      max-width: 760px;
       font-size: 20px;
       color: #222;
+      margin: 0 0 26px;
     }
 
-    .cards {
+    .people-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 8px;
+      gap: 22px;
     }
 
-    .card {
+    .person-card {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 24px;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
     }
 
-    .card h3 {
-      margin: 0 0 12px;
-      font-size: 21px;
+    .person-photo-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .person-photo {
+      width: 132px;
+      height: 132px;
+      border-radius: 999px;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid rgba(255,255,255,0.95);
+      box-shadow: 0 10px 28px rgba(17,17,17,0.12);
+      display: block;
+      background: #e9e5dc;
+    }
+
+    .person-card h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
       letter-spacing: -0.02em;
     }
 
-    .card p {
-      margin: 0;
-      font-size: 16px;
+    .person-role {
+      margin: 0 0 16px;
       color: var(--muted);
+      font-size: 16px;
     }
 
-    .list {
+    .person-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .portfolio-grid {
       display: grid;
-      gap: 16px;
-      margin-top: 8px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
 
-    .list-item {
-      padding: 0 0 18px;
-      border-bottom: 1px solid var(--line);
+    .portfolio-logo {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      min-height: 120px;
+      padding: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .list-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
+    .portfolio-logo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
     }
 
-    .list-item h3 {
-      margin: 0 0 8px;
-      font-size: 20px;
-    }
-
-    .list-item p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
+    .portfolio-logo img {
+      max-width: 160px;
+      max-height: 60px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
     }
 
     .contact-box {
-      background: var(--accent);
+      background: linear-gradient(135deg, #173861 0%, #1f476f 100%);
       color: #fff;
-      border-radius: 28px;
-      padding: 34px;
+      border-radius: 32px;
+      padding: 36px;
       margin: 30px 0 80px;
+      box-shadow: 0 24px 60px rgba(23,56,97,0.18);
     }
 
     .contact-box h2 {
       margin: 0 0 12px;
-      font-size: 34px;
+      font-size: 36px;
       letter-spacing: -0.03em;
     }
 
     .contact-box p {
-      margin: 0 0 20px;
-      color: rgba(255,255,255,0.8);
-      max-width: 700px;
+      margin: 0 0 22px;
+      max-width: 720px;
       font-size: 18px;
+      color: rgba(255,255,255,0.82);
     }
 
     .contact-box .button {
-      border-color: #fff;
-    }
-
-    .contact-box .button.primary {
       background: #fff;
       color: var(--accent);
+      border-color: #fff;
     }
 
     footer {
@@ -303,15 +296,14 @@
       font-size: 14px;
     }
 
-    @media (max-width: 900px) {
-      .hero-panel,
-      .cards,
-      .section-head {
+    @media (max-width: 960px) {
+      .section-head,
+      .people-grid,
+      .portfolio-grid {
         grid-template-columns: 1fr;
       }
 
       .nav {
-        height: auto;
         padding: 18px 0;
         align-items: flex-start;
         flex-direction: column;
@@ -323,30 +315,16 @@
       }
 
       .hero {
-        padding-top: 70px;
-      }
-
-      .section-body p {
-        font-size: 18px;
+        padding-top: 72px;
       }
     }
 
     @media (max-width: 560px) {
-      .wrap {
-        padding: 0 20px;
-      }
-
-      h1 {
-        font-size: 42px;
-      }
-
-      .hero-copy {
-        font-size: 18px;
-      }
-
-      .contact-box h2 {
-        font-size: 28px;
-      }
+      .wrap { padding: 0 20px; }
+      h1 { font-size: 44px; }
+      .hero-copy { font-size: 19px; }
+      .contact-box h2 { font-size: 30px; }
+      .brand img { height: 40px; }
     }
   </style>
 </head>
@@ -354,12 +332,11 @@
   <header>
     <div class="wrap nav">
       <div class="brand">
-        <img src="yenomi_logo.jpeg" style="height:40px;">
-        <span>YenoMI LLC</span>
+        <img src="logo.png" alt="YENOMI logo" />
+        <span>YENOMI LLC</span>
       </div>
       <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#what-we-do">What We Do</a>
+        <a href="#team">Team</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -369,62 +346,39 @@
   <main class="wrap">
     <section class="hero">
       <div class="eyebrow">Legal industry expertise • Capital • Strategic advisory</div>
-      <h1>Investing in and advising the next generation of legal industry and legal tech companies.</h1>
+      <h1>Investing in and advising companies across the legal industry and legal technology ecosystem.</h1>
       <div class="hero-copy">
-        YenoMI LLC partners with founders, operators, and businesses across the legal ecosystem, combining deep industry expertise with practical strategic support.
+        YENOMI partners with founders, operators, and investors across the legal ecosystem, combining deep industry expertise with practical strategic support.
       </div>
       <div class="hero-actions">
-        <a class="button primary" href="#contact">Get in touch</a>
-        <a class="button secondary" href="#what-we-do">Learn more</a>
-      </div>
-
-      <div class="hero-panel">
-        <div>
-          <div class="label">Focus</div>
-          <div class="value">Legal services, legal technology, and adjacent businesses.</div>
-        </div>
-        <div>
-          <div class="label">Approach</div>
-          <div class="value">Selective investing paired with hands-on, high-value advisory support.</div>
-        </div>
-        <div>
-          <div class="label">Perspective</div>
-          <div class="value">Built by operators with real experience in the legal industry.</div>
-        </div>
+        <a class="button primary" href="mailto:hello@yenomillc.com">Get in touch</a>
       </div>
     </section>
 
-    <section id="about">
+    <section id="team">
       <div class="section-head">
-        <div class="section-title">About</div>
+        <div class="section-title">Team</div>
         <div class="section-body">
-          <p>
-            YenoMI LLC was founded by two experienced legal industry and legal technology professionals who understand both how legal businesses operate and how they evolve.
+          <p class="section-intro">
+            Founded by experienced legal industry operators and investors with deep roots in legal services and legal technology.
           </p>
-          <p>
-            We bring a practical operator’s perspective to opportunities across the sector, whether through direct investment, strategic consulting, or long-term partnership.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="what-we-do">
-      <div class="section-head">
-        <div class="section-title">What We Do</div>
-        <div class="section-body">
-          <div class="cards">
-            <div class="card">
-              <h3>Investing</h3>
-              <p>
-                We invest in promising companies serving the legal industry, with particular interest in software, services, infrastructure, and workflow-enabling businesses.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Consulting</h3>
-              <p>
-                We advise legal tech companies, legal services businesses, and industry participants on strategy, growth, positioning, operations, and market development.
-              </p>
-            </div>
+          <div class="people-grid">
+            <article class="person-card">
+              <div class="person-photo-wrap">
+                <img class="person-photo" src="mm.jpeg" alt="Michael Moradzadeh" />
+              </div>
+              <h3>Michael Moradzadeh</h3>
+              
+              <a class="person-link" href="https://www.linkedin.com/in/moradzadeh/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            </article>
+            <article class="person-card">
+              <div class="person-photo-wrap">
+                <img class="person-photo" src="yy.jpeg" alt="Yaacov Silberman" />
+              </div>
+              <h3>Yaacov Silberman</h3>
+              
+              <a class="person-link" href="https://www.linkedin.com/in/ypsilberman/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            </article>
           </div>
         </div>
       </div>
@@ -434,19 +388,22 @@
       <div class="section-head">
         <div class="section-title">Portfolio</div>
         <div class="section-body">
-          <div class="list">
-            <div class="list-item">
-              <h3>Selective by design</h3>
-              <p>
-                We take a focused approach and partner where we believe experience, judgment, and industry fluency can materially improve outcomes.
-              </p>
-            </div>
-            <div class="list-item">
-              <h3>Built for alignment</h3>
-              <p>
-                Our work is grounded in long-term thinking, straightforward collaboration, and a strong preference for high-quality businesses and teams.
-              </p>
-            </div>
+          <p class="section-intro">
+            A selected group of companies across legal services, legal technology, and adjacent sectors.
+          </p>
+          <div class="portfolio-grid">
+            <a class="portfolio-logo" href="https://www.legaltech.com/" target="_blank" rel="noopener noreferrer">
+              <img src="tltf.png" alt="TLTF" />
+            </a>
+            <a class="portfolio-logo" href="https://www.arcoslabs.com/" target="_blank" rel="noopener noreferrer">
+              <img src="arcos.png" alt="Arcos Labs" />
+            </a>
+            <a class="portfolio-logo" href="https://www.marveri.com/" target="_blank" rel="noopener noreferrer">
+              <img src="marveri.png" alt="Marveri" />
+            </a>
+            <a class="portfolio-logo" href="https://eudia.com" target="_blank" rel="noopener noreferrer">
+              <img src="eudia.png" alt="Eudia" />
+            </a>
           </div>
         </div>
       </div>
@@ -458,12 +415,12 @@
         <p>
           If you are building, operating, or investing in a company connected to the legal industry, we’d welcome the conversation.
         </p>
-        <a class="button primary" href="mailto:hello@yenomillc.com">hello@yenomillc.com</a>
+        <a class="button" href="mailto:hello@yenomillc.com">Get in touch</a>
       </div>
     </section>
 
     <footer>
-      © YenoMI LLC
+      © YENOMI LLC
     </footer>
   </main>
 </body>
